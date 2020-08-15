@@ -19,7 +19,7 @@ def bus_stations(request):
     current_page = int(request.GET.get('page', 1))
     paginator = Paginator(bus_list, 10)
     stations = paginator.get_page(current_page)
-    prev_page, next_page = None, None
+    prev_page, next_page = 1, None
     if stations.has_previous():
         prev_page = stations.previous_page_number()
     if stations.has_next():
